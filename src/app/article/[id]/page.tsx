@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+
 import { client } from '../../../../libs/microcms';
 import styles from './page.module.css'; // 追加
 
@@ -22,7 +23,6 @@ async function getBlogPost(id: string): Promise<Props> {
 // 記事詳細ページの生成
 export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params; // IDを取得
-    console.log(id);
     const post = await getBlogPost(id);
 
     // dayjsを使ってpublishedAtをYY.MM.DD形式に変換

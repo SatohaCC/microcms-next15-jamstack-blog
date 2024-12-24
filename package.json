@@ -7,7 +7,8 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "prepare": "husky"
+        "prepare": "husky",
+        "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
     },
     "dependencies": {
         "dayjs": "^1.11.13",
@@ -17,12 +18,19 @@
         "react-dom": "^19.0.0"
     },
     "devDependencies": {
+        "@babel/eslint-parser": "^7.25.9",
         "@next/eslint-plugin-next": "^15.1.2",
         "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^8.57.1",
         "eslint-config-airbnb-typescript": "^18.0.0",
         "eslint-config-next": "^15.0.4",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-import": "^2.31.0",
+        "eslint-plugin-prettier": "^5.2.1",
+        "eslint-plugin-react": "^7.37.3",
         "eslint-plugin-unused-imports": "^4.1.4",
         "husky": "^9.1.7",
         "lint-staged": "^15.2.11",

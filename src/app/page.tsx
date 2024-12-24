@@ -1,5 +1,5 @@
-// app/page.tsx
 import Link from 'next/link';
+
 import { client } from '../../libs/microcms';
 
 // ブログ記事の型定義
@@ -22,7 +22,6 @@ async function getBlogPosts(): Promise<Props[]> {
             limit: 5, // 最新の5件を取得
         },
     });
-    console.log(data);
     return data.contents;
 }
 
