@@ -7,16 +7,22 @@ type Props = {
     id: string;
     title: string;
 };
-
+type APIResponse<T> = {
+    contents: T[];
+    totalCount: number;
+    offset: number;
+    limit: number;
+};
 // microCMSからブログ記事を取得
 async function getBlogPosts(): Promise<Props[]> {
-    const data = await client.get({
+    const data: APIResponse<Props> = await client.get({
         endpoint: 'articles', // 'blog'はmicroCMSのエンドポイント名
         queries: {
             fields: 'id,title', // idとtitleを取得
             limit: 5, // 最新の5件を取得
         },
     });
+    console.log(data);
     return data.contents;
 }
 

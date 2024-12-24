@@ -13,7 +13,7 @@ type Props = {
 
 // microCMSから特定の記事を取得
 async function getBlogPost(id: string): Promise<Props> {
-    const data = await client.get({
+    const data: Props = await client.get({
         endpoint: `articles/${id}`,
     });
     return data;
