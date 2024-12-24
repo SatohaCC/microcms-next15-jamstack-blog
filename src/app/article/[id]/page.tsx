@@ -27,7 +27,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
             <div className={styles.date}>{formattedDate}</div> {/* 日付を表示 */}
             <div className={styles.category}>
                 カテゴリー：{post.categories[0].label} {/* カテゴリーを表示 */}
-            </div>{" "}
+            </div>
             {/* カテゴリーを表示 */}
             <div className={styles.post} dangerouslySetInnerHTML={{ __html: post.body }} />{" "}
             {/* 記事本文を表示 */}
