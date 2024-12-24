@@ -53,6 +53,11 @@ module.exports = {
         // その他
         'no-console': ['warn', { allow: ['warn', 'error'] }],
         'no-debugger': 'warn',
+        'padding-line-between-statements': [
+            'error',
+            { blankLine: 'always', prev: '*', next: 'function' }, // 関数定義の前に空行
+            { blankLine: 'always', prev: 'function', next: '*' }, // 関数定義の後に空行
+        ],
     },
     settings: {
         'import/resolver': {
