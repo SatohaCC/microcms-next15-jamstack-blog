@@ -13,6 +13,7 @@ type APIResponse<T> = {
     offset: number;
     limit: number;
 };
+
 // microCMSからブログ記事を取得
 async function getBlogPosts(): Promise<Props[]> {
     const data: APIResponse<Props> = await client.get({
