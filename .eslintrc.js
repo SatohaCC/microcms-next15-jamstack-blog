@@ -1,72 +1,71 @@
 module.exports = {
     root: true,
-    parser: '@typescript-eslint/parser',
+    parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaVersion: 2021,
-        sourceType: 'module',
+        sourceType: "module",
     },
-    plugins: ['react', 'react-hooks', 'jsx-a11y', 'import', 'prettier'],
+    plugins: ["react", "react-hooks", "jsx-a11y", "import", "prettier"], // 'prettier' を削除
     extends: [
-        'eslint:recommended',
-        'plugin:react/recommended',
-        'plugin:react-hooks/recommended',
-        'plugin:jsx-a11y/recommended',
-        'plugin:import/errors',
-        'plugin:import/warnings',
-        'plugin:import/typescript',
-        'plugin:prettier/recommended',
-        'next/core-web-vitals',
-        'prettier',
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
+        "next/core-web-vitals",
+        // 'prettier', // これを削除
     ],
     rules: {
         // Reactルール
-        'react/react-in-jsx-scope': 'off', // React 17+ では必要ない
-        'react/jsx-uses-react': 'off', // React 17+ では必要ない
-        'react/prop-types': 'off', // TypeScript で型定義するため
+        "react/react-in-jsx-scope": "off", // React 17+ では必要ない
+        "react/jsx-uses-react": "off", // React 17+ では必要ない
+        "react/prop-types": "off", // TypeScript で型定義するため
 
         // Importルール
-        'import/order': [
-            'warn', // エラーではなく警告にする
+        "import/order": [
+            "warn", // エラーではなく警告にする
             {
                 groups: [
-                    ['builtin', 'external'], // ビルトインと外部モジュール
-                    'internal', // プロジェクト内部モジュール
-                    ['parent', 'sibling', 'index'], // 親、兄弟、インデックスファイル
-                    'object', // objectなどのimport
-                    'type', // type のimport
+                    ["builtin", "external"], // ビルトインと外部モジュール
+                    "internal", // プロジェクト内部モジュール
+                    ["parent", "sibling", "index"], // 親、兄弟、インデックスファイル
+                    "object", // objectなどのimport
+                    "type", // type のimport
                 ],
                 pathGroups: [
                     {
-                        pattern: '~/**',
-                        group: 'internal',
-                        position: 'before',
+                        pattern: "~/**",
+                        group: "internal",
+                        position: "before",
                     },
                 ],
-                'newlines-between': 'always', // グループ間に空行を強制
+                "newlines-between": "always", // グループ間に空行を強制
             },
         ],
-        'import/no-unresolved': 'error', // 解決できないインポートにエラーを出す
+        "import/no-unresolved": "error", // 解決できないインポートにエラーを出す
 
-        // Prettierとの統合
-        'prettier/prettier': 'warn',
+        // Prettierとの統合を削除
+        // 'prettier/prettier': 'warn', // この行を削除
 
         // その他
-        'no-console': ['warn', { allow: ['warn', 'error'] }],
-        'no-debugger': 'warn',
-        'padding-line-between-statements': [
-            'error',
-            { blankLine: 'always', prev: '*', next: 'function' }, // 関数定義の前に空行
-            { blankLine: 'always', prev: 'function', next: '*' }, // 関数定義の後に空行
+        "no-console": ["warn", { allow: ["warn", "error"] }],
+        "no-debugger": "warn",
+        "padding-line-between-statements": [
+            "error",
+            { blankLine: "always", prev: "*", next: "function" }, // 関数定義の前に空行
+            { blankLine: "always", prev: "function", next: "*" }, // 関数定義の後に空行
         ],
     },
     settings: {
-        'import/resolver': {
+        "import/resolver": {
             node: {
-                extensions: ['.js', '.jsx', '.ts', '.tsx'], // 拡張子の指定
+                extensions: [".js", ".jsx", ".ts", ".tsx"], // 拡張子の指定
             },
             typescript: {
                 alwaysTryTypes: true,
-                project: './tsconfig.json', //typescript設定を使う場合
+                project: "./tsconfig.json", //typescript設定を使う場合
             },
         },
     },
