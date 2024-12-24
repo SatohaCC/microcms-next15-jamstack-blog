@@ -1,3 +1,73 @@
 {
-    "extends": ["next/core-web-vitals", "next/typescript"]
-}
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json",
+      "tsconfigRootDir": ".",
+      "ecmaVersion": 2021,
+      "sourceType": "module"
+    },
+    "plugins": ["@typescript-eslint", "react", "react-hooks", "jsx-a11y", "import", "prettier"],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:jsx-a11y/recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript",
+      "plugin:prettier/recommended",
+      "next/core-web-vitals"
+    ],
+    "rules": {
+      // TypeScriptルール
+      "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/consistent-type-imports": "warn",
+
+      // Reactルール
+      "react/react-in-jsx-scope": "off", // Next.jsではReactのimportは不要
+      "react/prop-types": "off", // TypeScriptで型定義をするため不要
+      "react/jsx-uses-react": "off", // React 17+では不要
+
+      // Importルール
+      "import/order": [
+        "warn",
+        {
+          "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+          "newlines-between": "always",
+          "alphabetize": { "order": "asc", "caseInsensitive": true }
+        }
+      ],
+      "import/no-unresolved": "error",
+
+      // Prettierとの統合
+      "prettier/prettier": [
+        "warn",
+        {
+          "singleQuote": true,
+          "semi": true,
+          "trailingComma": "all",
+          "printWidth": 80,
+          "tabWidth": 2,
+          "endOfLine": "auto"
+        }
+      ],
+
+      // その他
+      "no-console": ["warn", { "allow": ["warn", "error"] }],
+      "no-debugger": "warn"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      },
+      "import/resolver": {
+        "typescript": {
+          "alwaysTryTypes": true
+        }
+      }
+    }
+  }
