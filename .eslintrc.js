@@ -15,7 +15,7 @@ module.exports = {
         "plugin:import/warnings",
         "plugin:import/typescript",
         "next/core-web-vitals",
-        // 'prettier', // これを削除
+        "plugin:storybook/recommended",
     ],
     rules: {
         // Reactルール

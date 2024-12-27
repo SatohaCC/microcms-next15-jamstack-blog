@@ -29,7 +29,6 @@ export default defineConfig({
                     button: { value: "#0f766e" },
                     buttonHover: { value: "#115e59" },
                     buttonActive: { value: "#999999" },
-
                     buttonText: { value: "#f5f5f5" },
                     background: { value: "#f9f4ef" },
                     text: { value: "#000" },
