@@ -37,7 +37,6 @@ export default async function Home() {
                 {posts.map((post) => (
                     <li key={post.id}>
                         <Link href={`/article/${post.id}`}>
-                            {" "}
                             {/* 記事へのリンクを生成 */}
                             {post.title} {/* タイトルを表示 */}
                         </Link>

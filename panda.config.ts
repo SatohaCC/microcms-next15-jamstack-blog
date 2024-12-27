@@ -9,6 +9,8 @@ export default defineConfig({
     // Where to look for your css declarations
     include: [
         "./src/_ui/**/*.{ts,tsx,js,jsx}",
+        "./src/_ui/**/*.stories.{ts,tsx,js,jsx}",
+
         "./src/**/*.{ts,tsx,js,jsx}",
         "./pages/**/*.{ts,tsx,js,jsx}",
     ],
@@ -28,8 +30,9 @@ export default defineConfig({
                     secondary: { value: "#EE0F0F" },
                     button: { value: "#0f766e" },
                     buttonHover: { value: "#115e59" },
-                    buttonActive: { value: "#999999" },
+                    buttonActive: { value: "#134e4a" },
                     buttonText: { value: "#f5f5f5" },
+                    buttonOutlineHover: { value: "#f0fdfa" },
                     background: { value: "#f9f4ef" },
                     text: { value: "#000" },
                 },

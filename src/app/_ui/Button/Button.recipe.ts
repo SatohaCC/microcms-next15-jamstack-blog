@@ -45,28 +45,42 @@ export const buttonRecipe = defineRecipe({
                 _disabled: {
                     cursor: "not-allowed",
                     opacity: "0.4",
+                    _hover: {
+                        background: "button",
+                    },
+                    _focus: {
+                        background: "button",
+                    },
+                    _active: {
+                        background: "button",
+                    },
                 },
             },
             outline: {
                 borderWidth: "1px",
                 borderColor: "button",
+                background: "none",
                 _hover: {
-                    background: "button",
+                    background: "buttonOutlineHover",
+                },
+                _focus: {
+                    background: "buttonActive",
+                },
+                _active: {
+                    background: "buttonActive",
                 },
                 _disabled: {
-                    borderColor: "border.disabled",
-                    color: "fg.disabled",
                     cursor: "not-allowed",
-                    _hover: {
-                        background: "transparent",
-                        borderColor: "border.disabled",
-                        color: "fg.disabled",
+                    opacity: "0.4",
+                    _active: {
+                        background: "none",
                     },
-                },
-                _focusVisible: {
-                    outlineOffset: "2px",
-                    outline: "2px solid",
-                    outlineColor: "border.outline",
+                    _hover: {
+                        background: "none",
+                    },
+                    _focus: {
+                        background: "none",
+                    },
                 },
             },
         },
@@ -109,33 +123,11 @@ export const buttonRecipe = defineRecipe({
                 h: "11",
                 minW: "11",
                 textStyle: "md",
-                px: "4.5",
-                gap: "2",
-                "& svg": {
-                    width: "5",
-                    height: "5",
-                },
-            },
-            xl: {
-                h: "12",
-                minW: "12",
-                textStyle: "xl",
                 px: "5",
-                gap: "2.5",
-                "& svg": {
-                    width: "5",
-                    height: "5",
-                },
-            },
-            "2xl": {
-                h: "16",
-                minW: "16",
-                textStyle: "2xl",
-                px: "7",
                 gap: "3",
                 "& svg": {
-                    width: "6",
-                    height: "6",
+                    width: "5",
+                    height: "5",
                 },
             },
         },

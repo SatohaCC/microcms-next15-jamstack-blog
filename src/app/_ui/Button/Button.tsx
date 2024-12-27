@@ -13,12 +13,12 @@ type Props = AriaButtonProps &
     };
 
 const Button = (props: Props) => {
-    let { children, visual } = props;
+    let { children, visual, size } = props;
     let ref = useRef<HTMLButtonElement | null>(null);
     let { buttonProps } = useButton(props, ref);
 
     return (
-        <button {...buttonProps} ref={ref} className={button({ visual })}>
+        <button {...buttonProps} ref={ref} className={button({ visual, size })}>
             {children}
         </button>
     );
