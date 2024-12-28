@@ -7,7 +7,7 @@ export const buttonRecipe = defineRecipe({
     base: {
         alignItems: "center",
         appearance: "none",
-        borderRadius: "4px",
+        borderRadius: "4",
         cursor: "pointer",
         display: "inline-flex",
         fontWeight: "semibold",
