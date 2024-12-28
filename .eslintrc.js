@@ -5,7 +5,7 @@ module.exports = {
         ecmaVersion: 2021,
         sourceType: "module",
     },
-    plugins: ["react", "react-hooks", "jsx-a11y", "import", "prettier"], // 'prettier' を削除
+    plugins: ["react", "react-hooks", "jsx-a11y", "import", "prettier"],
     extends: [
         "eslint:recommended",
         "plugin:react/recommended",
