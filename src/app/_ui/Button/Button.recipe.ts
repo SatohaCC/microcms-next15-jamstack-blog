@@ -85,6 +85,33 @@ export const buttonRecipe = defineRecipe({
                     },
                 },
             },
+            text: {
+                color: "button",
+                textDecoration: "underline",
+                textUnderlineOffset: "auto",
+                _hover: {
+                    background: "buttonOutlineHover",
+                },
+                _focus: {
+                    background: "buttonOutlineActive",
+                },
+                _active: {
+                    background: "buttonOutlineActive",
+                },
+                _disabled: {
+                    cursor: "not-allowed",
+                    opacity: "0.4",
+                    _hover: {
+                        background: "button",
+                    },
+                    _focus: {
+                        background: "button",
+                    },
+                    _active: {
+                        background: "button",
+                    },
+                },
+            },
         },
         size: {
             lg: {

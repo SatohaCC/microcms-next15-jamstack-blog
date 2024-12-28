@@ -21,7 +21,7 @@ const meta = {
             options: button.variantMap.size,
             control: { type: "radio" },
             description: "ボタンのサイズ",
-            defaultValue: "lg",
+
             // table: {
             //     defaultValue: { summary: "lg" },
             // },
@@ -58,10 +58,10 @@ export const Playground: Story = {
 export const AllButtons = {
     render: () => {
         return (
-            <div className="flex flex-col gap-8">
+            <div>
                 <div>
                     <h2 className={css({ my: 2 })}>塗りボタン（Solid）</h2>
-                    <div className={css({ display: "flex", gap: 4 })}>
+                    <div className={css({ display: "flex", gap: 4, alignItems: "center" })}>
                         <Button visual="solid" size="lg">
                             Button
                         </Button>
@@ -78,7 +78,7 @@ export const AllButtons = {
                 </div>
                 <div>
                     <h2 className={css({ my: 2 })}>塗りボタン（Solid Disabled）</h2>
-                    <div className={css({ display: "flex", gap: 4 })}>
+                    <div className={css({ display: "flex", gap: 4, alignItems: "center" })}>
                         <Button visual="solid" size="lg" isDisabled>
                             Button
                         </Button>
@@ -95,7 +95,7 @@ export const AllButtons = {
                 </div>
                 <div>
                     <h2 className={css({ my: 2 })}>アウトラインボタン（Outline）</h2>
-                    <div className={css({ display: "flex", gap: 4 })}>
+                    <div className={css({ display: "flex", gap: 4, alignItems: "center" })}>
                         <Button visual="outline" size="lg">
                             Button
                         </Button>
@@ -112,7 +112,7 @@ export const AllButtons = {
                 </div>
                 <div>
                     <h2 className={css({ my: 2 })}>アウトラインボタン（Outline Disabled））</h2>
-                    <div className={css({ display: "flex", gap: 4 })}>
+                    <div className={css({ display: "flex", gap: 4, alignItems: "center" })}>
                         <Button visual="outline" size="lg" isDisabled>
                             Button
                         </Button>
@@ -145,6 +145,14 @@ export const Outline: Story = {
     args: {
         ...button.raw({
             visual: "outline",
+        }),
+        children: "Button",
+    },
+};
+export const Text: Story = {
+    args: {
+        ...button.raw({
+            visual: "text",
         }),
         children: "Button",
     },
