@@ -16,6 +16,7 @@ module.exports = {
         "plugin:import/typescript",
         "next/core-web-vitals",
         "plugin:storybook/recommended",
+        "plugin:jest/recommended",
     ],
     rules: {
         // Reactルール
