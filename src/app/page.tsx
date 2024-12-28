@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { client } from "../../libs/microcms";
-import Button from "./_ui/Button/Button";
 
 // ブログ記事の型定義
 type BlogPost = {
@@ -34,7 +33,6 @@ export default async function Home() {
     return (
         <main>
             <h1>ブログ記事一覧</h1>
-            <Button isDisabled>ボタン</Button>
             <ul>
                 {posts.map((post) => (
                     <li key={post.id}>
