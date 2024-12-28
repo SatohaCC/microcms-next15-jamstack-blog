@@ -10,21 +10,14 @@ const meta = {
     tags: ["autodocs"],
     argTypes: {
         visual: {
-            options: ["solid", "outline", "text"],
+            options: button.variantMap.visual,
             control: { type: "radio" },
-            description:
-                "ボタンのスタイルを、塗りボタン（`solid`）、アウトラインボタン（`outline`）、テキストボタン（`text`）の3種類から選択します。",
-            table: {
-                type: { summary: "'solid' | 'outline' | 'text'" },
-            },
+            description: "ボタンのスタイル",
         },
         size: {
-            options: ["lg", "md", "sm", "xs"],
+            options: button.variantMap.size,
             control: { type: "radio" },
-            description: "ボタンのサイズを以下から選択します。",
-            table: {
-                type: { summary: "'lg' | 'md' | 'sm' | 'xs'" },
-            },
+            description: "ボタンのサイ。",
         },
     },
     decorators: [
@@ -69,7 +62,7 @@ export const AllButtons = {
                     </div>
                 </div>
                 <div>
-                    <h2>塗りボタン（Solid DiSabled）</h2>
+                    <h2>塗りボタン（Solid Disabled）</h2>
                     <div className={css({ display: "flex", gap: 4 })}>
                         <Button visual="solid" size="lg" isDisabled>
                             Button
@@ -103,7 +96,7 @@ export const AllButtons = {
                     </div>
                 </div>
                 <div>
-                    <h2>アウトラインボタン（Outline）</h2>
+                    <h2>アウトラインボタン（Outline Disabled））</h2>
                     <div className={css({ display: "flex", gap: 4 })}>
                         <Button visual="outline" size="lg" isDisabled>
                             Button

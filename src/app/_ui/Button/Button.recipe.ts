@@ -2,6 +2,7 @@ import { defineRecipe } from "@pandacss/dev";
 
 export const buttonRecipe = defineRecipe({
     className: "button",
+    description: "The styles for the Button component",
     base: {
         alignItems: "center",
         appearance: "none",
@@ -64,10 +65,10 @@ export const buttonRecipe = defineRecipe({
                     background: "buttonOutlineHover",
                 },
                 _focus: {
-                    background: "buttonActive",
+                    background: "buttonOutlineActive",
                 },
                 _active: {
-                    background: "buttonActive",
+                    background: "buttonOutlineActive",
                 },
                 _disabled: {
                     cursor: "not-allowed",

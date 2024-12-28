@@ -33,6 +33,8 @@ export default defineConfig({
                     buttonActive: { value: "#134e4a" },
                     buttonText: { value: "#f5f5f5" },
                     buttonOutlineHover: { value: "#f0fdfa" },
+                    buttonOutlineActive: { value: "#ccfbf1" },
+
                     background: { value: "#f9f4ef" },
                     text: { value: "#000" },
                 },
