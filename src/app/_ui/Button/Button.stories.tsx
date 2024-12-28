@@ -13,16 +13,31 @@ const meta = {
             options: button.variantMap.visual,
             control: { type: "radio" },
             description: "ボタンのスタイル",
+            // table: {
+            //     defaultValue: { summary: "solid" },
+            // },
         },
         size: {
             options: button.variantMap.size,
             control: { type: "radio" },
-            description: "ボタンのサイ。",
+            description: "ボタンのサイズ",
+            defaultValue: "lg",
+            // table: {
+            //     defaultValue: { summary: "lg" },
+            // },
+        },
+        isDisabled: {
+            control: { type: "boolean" },
+            description: "ボタンを無効にする",
+            // table: {
+            //     defaultValue: { summary: false },
+            // },
         },
     },
+
     decorators: [
         (Story) => (
-            <div className={css({ m: 10 })}>
+            <div className={css({ m: 5 })}>
                 <Story />
             </div>
         ),
@@ -45,7 +60,7 @@ export const AllButtons = {
         return (
             <div className="flex flex-col gap-8">
                 <div>
-                    <h2>塗りボタン（Solid Fill）</h2>
+                    <h2 className={css({ my: 2 })}>塗りボタン（Solid）</h2>
                     <div className={css({ display: "flex", gap: 4 })}>
                         <Button visual="solid" size="lg">
                             Button
@@ -62,7 +77,7 @@ export const AllButtons = {
                     </div>
                 </div>
                 <div>
-                    <h2>塗りボタン（Solid Disabled）</h2>
+                    <h2 className={css({ my: 2 })}>塗りボタン（Solid Disabled）</h2>
                     <div className={css({ display: "flex", gap: 4 })}>
                         <Button visual="solid" size="lg" isDisabled>
                             Button
@@ -79,7 +94,7 @@ export const AllButtons = {
                     </div>
                 </div>
                 <div>
-                    <h2>アウトラインボタン（Outline）</h2>
+                    <h2 className={css({ my: 2 })}>アウトラインボタン（Outline）</h2>
                     <div className={css({ display: "flex", gap: 4 })}>
                         <Button visual="outline" size="lg">
                             Button
@@ -96,7 +111,7 @@ export const AllButtons = {
                     </div>
                 </div>
                 <div>
-                    <h2>アウトラインボタン（Outline Disabled））</h2>
+                    <h2 className={css({ my: 2 })}>アウトラインボタン（Outline Disabled））</h2>
                     <div className={css({ display: "flex", gap: 4 })}>
                         <Button visual="outline" size="lg" isDisabled>
                             Button
@@ -126,31 +141,11 @@ export const Solid: Story = {
     },
 };
 
-export const SolidDiSabled: Story = {
-    args: {
-        ...button.raw({
-            visual: "solid",
-        }),
-        children: "Button",
-        isDisabled: true,
-    },
-};
-
 export const Outline: Story = {
     args: {
         ...button.raw({
             visual: "outline",
         }),
         children: "Button",
-    },
-};
-
-export const OutlineDiSabled: Story = {
-    args: {
-        ...button.raw({
-            visual: "outline",
-        }),
-        children: "Button",
-        isDisabled: true,
     },
 };

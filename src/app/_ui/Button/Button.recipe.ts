@@ -3,6 +3,7 @@ import { defineRecipe } from "@pandacss/dev";
 export const buttonRecipe = defineRecipe({
     className: "button",
     description: "The styles for the Button component",
+    jsx: ["Button"],
     base: {
         alignItems: "center",
         appearance: "none",
@@ -86,27 +87,15 @@ export const buttonRecipe = defineRecipe({
             },
         },
         size: {
-            xs: {
-                h: "8",
-                minW: "8",
-                textStyle: "xs",
-                px: "3",
-                gap: "2",
+            lg: {
+                h: "11",
+                minW: "11",
+                textStyle: "md",
+                px: "5",
+                gap: "3",
                 "& svg": {
-                    fontSize: "md",
-                    width: "4",
-                    height: "4",
-                },
-            },
-            sm: {
-                h: "9",
-                minW: "9",
-                textStyle: "sm",
-                px: "3.5",
-                gap: "2",
-                "& svg": {
-                    width: "4",
-                    height: "4",
+                    width: "5",
+                    height: "5",
                 },
             },
             md: {
@@ -120,15 +109,28 @@ export const buttonRecipe = defineRecipe({
                     height: "5",
                 },
             },
-            lg: {
-                h: "11",
-                minW: "11",
-                textStyle: "md",
-                px: "5",
-                gap: "3",
+
+            sm: {
+                h: "9",
+                minW: "9",
+                textStyle: "sm",
+                px: "3.5",
+                gap: "2",
                 "& svg": {
-                    width: "5",
-                    height: "5",
+                    width: "4",
+                    height: "4",
+                },
+            },
+            xs: {
+                h: "8",
+                minW: "8",
+                textStyle: "xs",
+                px: "3",
+                gap: "2",
+                "& svg": {
+                    fontSize: "md",
+                    width: "4",
+                    height: "4",
                 },
             },
         },
