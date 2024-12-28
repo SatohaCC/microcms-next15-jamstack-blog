@@ -1,6 +1,6 @@
 "use client";
 
-import { MouseEventHandler, ReactNode, useRef } from "react";
+import { ReactNode, useRef } from "react";
 import { type AriaButtonProps, useButton } from "react-aria";
 
 import { button, type ButtonVariantProps } from "../../../../styled-system/recipes";
@@ -8,7 +8,6 @@ import { button, type ButtonVariantProps } from "../../../../styled-system/recip
 type Props = AriaButtonProps &
     ButtonVariantProps & {
         children: ReactNode;
-        onClick?: MouseEventHandler<HTMLButtonElement>;
     };
 
 const Button = (props: Props) => {
