@@ -1,8 +1,6 @@
-import ArticleList from "@/_components/ArticleList/ArticleList";
-
 import { getList, getPaths } from "../../../../../libs/microcms";
 import { PAGINATION_REVALIDATE, PER_PAGE } from "../../../../../libs/siteInfo";
-import PaginationContainer from "../../../../_ui/Pagination/PaginationContainer";
+import ArticlePagePresentation from "./ArticlePagePresentation";
 
 export const revalidate = PAGINATION_REVALIDATE;
 
@@ -26,10 +24,5 @@ export default async function PageIndex(props: Props) {
         limit: PER_PAGE,
     });
 
-    return (
-        <>
-            <ArticleList contents={contents} />
-            <PaginationContainer totalCount={totalCount} currentPage={id} />
-        </>
-    );
+    return <ArticlePagePresentation contents={contents} totalCount={totalCount} currentPage={id} />;
 }
