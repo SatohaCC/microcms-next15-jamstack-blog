@@ -1,4 +1,4 @@
-import { portfolioData } from "@/app/_data/portfolioData";
+import { portfolioData } from "@/_data/portfolioData";
 
 import { css } from "../../../../styled-system/css";
 import PortfolioRow from "./PortfolioRow";

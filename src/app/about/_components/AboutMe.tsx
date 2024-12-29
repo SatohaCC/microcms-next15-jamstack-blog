@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { aboutData, iconsData } from "@/app/_data/aboutData";
+import { aboutData, iconsData } from "@/_data/aboutData";
 
 import { myName } from "../../../../libs/siteInfo";
 import { css, cva } from "../../../../styled-system/css";

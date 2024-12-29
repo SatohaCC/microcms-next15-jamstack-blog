@@ -1,6 +1,6 @@
 import { FaGithub, FaTwitter } from "react-icons/fa";
 
-import { iconType } from "../../../libs/types";
+import { iconType } from "../../libs/types";
 
 export const aboutData = [
     {

@@ -1,4 +1,4 @@
-import { qualificationsData } from "@/app/_data/qualificationsData";
+import { qualificationsData } from "@/_data/qualificationsData";
 
 import { css } from "../../../../styled-system/css";
 import { grid } from "../../../../styled-system/patterns";
