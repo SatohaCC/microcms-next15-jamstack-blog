@@ -2,7 +2,6 @@ import dayjs from "dayjs";
 
 import { client } from "../../../../libs/microcms";
 import { ArticleType } from "../../../../libs/types";
-import styles from "./page.module.css"; // 追加
 
 // microCMSから特定の記事を取得
 async function getBlogPost(id: string): Promise<ArticleType> {
@@ -22,15 +21,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
     const formattedDate = dayjs(post.publishedAt).format("YY.MM.DD");
 
     return (
-        <main className={styles.main}>
-            <h1 className={styles.title}>{post.title}</h1> {/* タイトルを表示 */}
-            <div className={styles.date}>{formattedDate}</div> {/* 日付を表示 */}
-            <div className={styles.category}>
+        <main>
+            <h1>{post.title}</h1> {/* タイトルを表示 */}
+            <div>{formattedDate}</div> {/* 日付を表示 */}
+            <div>
                 カテゴリー：{post.categories[0].label} {/* カテゴリーを表示 */}
             </div>
             {/* カテゴリーを表示 */}
-            <div className={styles.post} dangerouslySetInnerHTML={{ __html: post.body }} />{" "}
-            {/* 記事本文を表示 */}
+            <div dangerouslySetInnerHTML={{ __html: post.body }} /> {/* 記事本文を表示 */}
         </main>
     );
 }

@@ -1,6 +1,7 @@
 import { defineConfig } from "@pandacss/dev";
 
 import { buttonRecipe } from "@/_ui/Button/Button.recipe";
+import { tagRecipe } from "@/_ui/Tag/Tag.recipe";
 import { textRecipe } from "@/_ui/Text/Text.recipe";
 
 export default defineConfig({
@@ -25,6 +26,7 @@ export default defineConfig({
             recipes: {
                 button: buttonRecipe,
                 text: textRecipe,
+                tag: tagRecipe,
             },
             tokens: {
                 colors: {

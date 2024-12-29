@@ -1,47 +1,18 @@
-import Link from "next/link";
+import ArticleList from "@/_components/ArticleList";
+import PaginationContainer from "@/_ui/Pagination/PaginationContainer";
 
-import { client } from "../../libs/microcms";
+import { getList } from "../../libs/microcms";
+import { PAGINATION_REVALIDATE } from "../../libs/siteInfo";
 
-// ブログ記事の型定義
-type BlogPost = {
-    id: string;
-    title: string;
-};
-
-type MicroCMSResponse<T> = {
-    contents: T[];
-    totalCount: number;
-    offset: number;
-    limit: number;
-};
-
-// microCMSからブログ記事を取得
-async function getBlogPosts(): Promise<BlogPost[]> {
-    const data: MicroCMSResponse<BlogPost> = await client.get({
-        endpoint: "articles",
-        queries: {
-            fields: "id,title", // idとtitleを取得
-            limit: 5, // 最新の5件を取得
-        },
-    });
-    return data.contents;
-}
+export const revalidate = PAGINATION_REVALIDATE;
 
 export default async function Home() {
-    const posts = await getBlogPosts();
+    const { contents, totalCount } = await getList({ limit: 5, offset: 0 });
 
     return (
-        <main>
-            <ul>
-                {posts.map((post) => (
-                    <li key={post.id}>
-                        <Link href={`/article/${post.id}`}>
-                            {/* 記事へのリンクを生成 */}
-                            {post.title} {/* タイトルを表示 */}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </main>
+        <>
+            <ArticleList contents={contents} />
+            <PaginationContainer totalCount={totalCount} currentPage={1} />
+        </>
     );
 }
