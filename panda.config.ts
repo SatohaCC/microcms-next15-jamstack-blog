@@ -1,6 +1,6 @@
 import { defineConfig } from "@pandacss/dev";
 
-import { buttonRecipe } from "@/app/_ui/Button/Button.recipe";
+import { buttonRecipe } from "@/_ui/Button/Button.recipe";
 
 export default defineConfig({
     // Whether to use css reset

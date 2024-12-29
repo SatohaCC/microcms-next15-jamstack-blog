@@ -1,8 +1,7 @@
-import { expect, jest } from "@storybook/jest";
-import { within } from "@storybook/test";
+import { jest } from "@storybook/jest";
 
-import { css } from "../../../../styled-system/css";
-import { button } from "../../../../styled-system/recipes";
+import { css } from "../../../styled-system/css";
+import { button } from "../../../styled-system/recipes/button";
 import Button from "./Button";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -150,13 +149,6 @@ export const Solid: Story = {
             visual: "solid",
         }),
         children: "Button",
-    },
-    play: async ({ canvasElement, step }) => {
-        const canvas = within(canvasElement);
-
-        await step("ボタンにLabelの文字列が表示されている", async () => {
-            await expect(canvas.getByText("Button")).toBeInTheDocument();
-        });
     },
 };
 

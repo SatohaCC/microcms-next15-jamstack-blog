@@ -3,7 +3,7 @@
 import { ReactNode } from "react";
 import { Button as RACButton, type ButtonProps as RACButtonProps } from "react-aria-components";
 
-import { button, type ButtonVariantProps } from "../../../../styled-system/recipes";
+import { button, type ButtonVariantProps } from "../../../styled-system/recipes";
 
 type Props = ButtonVariantProps &
     RACButtonProps & {
