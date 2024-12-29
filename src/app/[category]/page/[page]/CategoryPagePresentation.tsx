@@ -6,15 +6,16 @@ type Props = {
     contents: any[];
     totalCount: number;
     currentPage: number;
+    category: string;
 };
 
-const ArticlePagePresentation = ({ contents, totalCount, currentPage }: Props) => {
+const CategoryPagePresentation = ({ contents, totalCount, currentPage, category }: Props) => {
     return (
         <>
             <ArticleList contents={contents} />
-            <Pagination totalCount={totalCount} currentPage={currentPage} />
+            <Pagination totalCount={totalCount} currentPage={currentPage} category={category} />
         </>
     );
 };
 
-export default ArticlePagePresentation;
+export default CategoryPagePresentation;

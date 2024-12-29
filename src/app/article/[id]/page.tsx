@@ -1,13 +1,9 @@
 import dayjs from "dayjs";
 import "highlight.js/styles/a11y-dark.css";
-import parse from "html-react-parser";
 import { processer } from "microcms-richedit-processer";
 
-import BackBtn from "@/_components/BackBtn/BackBtn";
-
 import { client, getBlogPost } from "../../../../libs/microcms";
-import { css } from "../../../../styled-system/css";
-import { Box } from "../../../../styled-system/jsx";
+import BlogPostPresentation from "./BlogPostPresentation";
 
 // 記事詳細ページの生成
 export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
@@ -25,17 +21,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
     });
 
     return (
-        <>
-            <h1>{content.title}</h1> {/* タイトルを表示 */}
-            <div>作成:{publishedAt}</div> {/* 日付を表示 */}
-            <div>更新:{updatedAt}</div> {/* 日付を表示 */}
-            <p className={css({ py: "5" })}>{content.summary}</p>
-            {/* カテゴリーを表示 */}
-            <div className={css({ pt: "5" })}>{parse(newContent)}</div>
-            <Box pt={10}>
-                <BackBtn />
-            </Box>
-        </>
+        <BlogPostPresentation
+            title={content.title}
+            publishedAt={publishedAt}
+            updatedAt={updatedAt}
+            summary={content.summary || ""}
+            body={newContent}
+        />
     );
 }
 

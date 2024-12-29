@@ -1,10 +1,8 @@
 import ArticleList from "@/_components/ArticleList/ArticleList";
-import PaginationContainer from "@/_ui/Pagination/PaginationContainer";
+import Pagination from "@/_ui/Pagination/Pagination";
 
 import { getList } from "../../libs/microcms";
-import { PAGINATION_REVALIDATE } from "../../libs/siteInfo";
 
-export const revalidate = PAGINATION_REVALIDATE;
 export const dynamic = "force-static";
 
 export default async function Home() {
@@ -13,7 +11,7 @@ export default async function Home() {
     return (
         <>
             <ArticleList contents={contents} />
-            <PaginationContainer totalCount={totalCount} currentPage={1} />
+            <Pagination totalCount={totalCount} currentPage={1} />
         </>
     );
 }

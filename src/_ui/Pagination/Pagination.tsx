@@ -1,39 +1,45 @@
-import { Center, HStack } from "../../../styled-system/jsx";
-import { PaginationButton } from "./PagenationButton";
+import { PER_PAGE } from "../../../libs/siteInfo";
+import PaginationPresentation from "./PaginationPresentation";
 
 type Props = {
-    topPage: number;
-    lastPage: number;
-    pageList: number[];
+    totalCount: number;
+    category?: string;
     currentPage: number;
-    category: string;
 };
 
-const Pagination = ({ topPage, lastPage, pageList, currentPage, category }: Props) => {
+const Pagination = ({ totalCount, category = "article", currentPage }: Props) => {
+    if (totalCount <= PER_PAGE) return null;
+
+    const range = (start: number, end: number) =>
+        [...Array(end - start + 1)].map((_, i) => start + i);
+    const pages = range(1, Math.ceil(totalCount / PER_PAGE));
+    const topPage = 1;
+    const lastPage = pages[pages.length - 1];
+    const calculatePagesToRender = (
+        pageList: number[],
+        topPage: number,
+        lastPage: number,
+        currentPage: number
+    ) => {
+        return pageList.filter((page) => {
+            return (
+                page !== topPage &&
+                page !== lastPage &&
+                page >= currentPage - 2 &&
+                page <= currentPage + 2
+            );
+        });
+    };
+
+    const pagesToRender = calculatePagesToRender(pages, topPage, lastPage, currentPage);
     return (
-        <Center p={5}>
-            <HStack>
-                <PaginationButton page={topPage} currentPage={currentPage} category={category} />
-                {lastPage > 1 && currentPage > 3 && <div>・・・</div>}
-                {pageList.map((page, index) => (
-                    <PaginationButton
-                        key={index}
-                        page={page}
-                        currentPage={currentPage}
-                        category={category}
-                    />
-                ))}
-                {lastPage > 1 && currentPage < lastPage - 2 && <div>・・・</div>}
-                {lastPage > 1 && (
-                    <PaginationButton
-                        page={lastPage}
-                        currentPage={currentPage}
-                        category={category}
-                    />
-                )}
-            </HStack>
-        </Center>
+        <PaginationPresentation
+            topPage={topPage}
+            lastPage={lastPage}
+            pageList={pagesToRender}
+            currentPage={currentPage}
+            category={category}
+        />
     );
 };
-
 export default Pagination;

@@ -1,10 +1,6 @@
-import ArticleList from "@/_components/ArticleList/ArticleList";
-
 import { getList, getMenu, getPaths } from "../../../../../libs/microcms";
-import { PAGINATION_REVALIDATE, PER_PAGE } from "../../../../../libs/siteInfo";
-import PaginationContainer from "../../../../_ui/Pagination/PaginationContainer";
-
-export const revalidate = PAGINATION_REVALIDATE;
+import { PER_PAGE } from "../../../../../libs/siteInfo";
+import CategoryPagePresentation from "./CategoryPagePresentation";
 
 export async function generateStaticParams() {
     const { contents, totalCount } = await getMenu();
@@ -28,9 +24,11 @@ export default async function PageIndex(props: Props) {
     });
 
     return (
-        <>
-            <ArticleList contents={contents} />
-            <PaginationContainer totalCount={totalCount} category={category} currentPage={id} />
-        </>
+        <CategoryPagePresentation
+            contents={contents}
+            totalCount={totalCount}
+            currentPage={id}
+            category={category}
+        />
     );
 }
