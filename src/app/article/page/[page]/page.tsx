@@ -1,4 +1,4 @@
-import ArticleList from "@/_components/ArticleList";
+import ArticleList from "@/_components/ArticleList/ArticleList";
 
 import { getList, getPaths } from "../../../../../libs/microcms";
 import { PAGINATION_REVALIDATE, PER_PAGE } from "../../../../../libs/siteInfo";

@@ -3,7 +3,7 @@ import "highlight.js/styles/a11y-dark.css";
 import parse from "html-react-parser";
 import { processer } from "microcms-richedit-processer";
 
-import BackBtn from "@/_components/BackBtn";
+import BackBtn from "@/_components/BackBtn/BackBtn";
 
 import { client, getBlogPost } from "../../../../libs/microcms";
 import { css } from "../../../../styled-system/css";

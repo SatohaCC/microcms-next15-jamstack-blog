@@ -1,4 +1,4 @@
-import ArticleList from "@/_components/ArticleList";
+import ArticleList from "@/_components/ArticleList/ArticleList";
 import PaginationContainer from "@/_ui/Pagination/PaginationContainer";
 
 import { getList } from "../../libs/microcms";

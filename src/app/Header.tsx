@@ -1,4 +1,4 @@
-import DesktopNav from "@/_components/DesktopNav";
+import DesktopNav from "@/_components/DeskTopNav/DesktopNav";
 
 import { getMenu } from "../../libs/microcms";
 import { MENU_REVALIDATE } from "../../libs/siteInfo";

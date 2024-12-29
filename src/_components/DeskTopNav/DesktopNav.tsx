@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-import { siteName } from "../../libs/siteInfo";
-import { ParentCategoriesEntity } from "../../libs/types";
-import { Box, Flex } from "../../styled-system/jsx";
-import { flex } from "../../styled-system/patterns";
-import { text } from "../../styled-system/recipes";
+import { siteName } from "../../../libs/siteInfo";
+import { ParentCategoriesEntity } from "../../../libs/types";
+import { Box, Flex } from "../../../styled-system/jsx";
+import { flex } from "../../../styled-system/patterns";
+import { text } from "../../../styled-system/recipes";
 
 type Props = {
     contents: ParentCategoriesEntity[];
