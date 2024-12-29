@@ -12,10 +12,14 @@ export async function generateStaticParams() {
 }
 
 type Props = {
-    params: { page: string };
+    params: Promise<{ page: string }>;
 };
 
-export default async function PageIndex({ params: { page } }: Props) {
+export default async function PageIndex(props: Props) {
+    const params = await props.params;
+
+    const { page } = params;
+
     const id = parseInt(page);
     const { contents, totalCount } = await getList({
         offset: (id - 1) * PER_PAGE,
