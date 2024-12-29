@@ -1,6 +1,11 @@
 import localFont from "next/font/local";
+import { Suspense } from "react";
 
 import { siteDescription, siteName } from "../../libs/siteInfo";
+import { Box } from "../../styled-system/jsx";
+import Header from "./Header";
+import Loading from "./loading";
+import Main from "./Main";
 
 import type { Metadata } from "next";
 
@@ -31,7 +36,14 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ja">
-            <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+            <body className={`${geistSans.variable} ${geistMono.variable}`}>
+                <Box>
+                    <Header />
+                    <Main>
+                        <Suspense fallback={<Loading />}>{children}</Suspense>
+                    </Main>
+                </Box>
+            </body>
         </html>
     );
 }
