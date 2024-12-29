@@ -1,4 +1,4 @@
-import ArticleList from "@/_components/ArticleList/ArticleList";
+import ArticleList from "@/app/_components/ArticleList/ArticleList";
 
 import Pagination from "../../../../_ui/Pagination/Pagination";
 

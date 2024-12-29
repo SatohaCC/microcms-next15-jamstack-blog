@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import { ArticleType } from "../../../libs/types";
+import { ArticleType } from "../../../../libs/types";
 import ArticleList from "./ArticleList";
 
 // Testデータの作成

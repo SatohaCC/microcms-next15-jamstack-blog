@@ -1,6 +1,6 @@
 import parse from "html-react-parser";
 
-import BackBtn from "@/_components/BackBtn/BackBtn";
+import BackBtn from "@/_ui/BackBtn/BackBtn";
 
 import { css } from "../../../../styled-system/css";
 import { Box } from "../../../../styled-system/jsx";
