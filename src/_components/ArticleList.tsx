@@ -15,13 +15,9 @@ const ArticleList = ({ contents }: Props) => {
     return (
         <ul>
             {contents.map((content) => {
-                const tags = content.categories
-                    .filter((category) => category.label !== "")
-                    .map((category) => category.label);
-
                 return (
                     <li key={content.id} className={css({ p: "3" })}>
-                        <Card content={content} tags={tags} />
+                        <Card content={content} />
                     </li>
                 );
             })}
