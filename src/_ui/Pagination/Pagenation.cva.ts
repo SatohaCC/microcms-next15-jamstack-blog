@@ -32,7 +32,7 @@ export const pageButton = cva({
                     borderColor: "gray.700",
                 },
                 _focus: {
-                    outlineOffset: "2px",
+                    outlineOffset: "1px",
                     outline: "2px solid",
                     outlineColor: "gray.700",
                 },

@@ -63,7 +63,7 @@ export default defineConfig({
             color: "textColor", // リンクの色
             _hover: { color: "textColorHover", textDecoration: "none" }, // ホバー時の色と下線
             _active: { color: "textColorActive" }, // アクティブ時の色
-            _focus: { color: "textColorActive" }, // フォーカス時の色
+            // _focus: { color: "textColorActive" }, // フォーカス時の色
             cursor: "pointer", // カーソルをポインターに
         },
         h1: {
