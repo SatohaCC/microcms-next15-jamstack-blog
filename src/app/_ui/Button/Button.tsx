@@ -1,24 +1,20 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
-import { type AriaButtonProps, useButton } from "react-aria";
+import { ReactNode } from "react";
+import { Button as RACButton, type ButtonProps as RACButtonProps } from "react-aria-components";
 
 import { button, type ButtonVariantProps } from "../../../../styled-system/recipes";
 
-type Props = AriaButtonProps &
-    ButtonVariantProps & {
+type Props = ButtonVariantProps &
+    RACButtonProps & {
         children: ReactNode;
     };
 
-const Button = (props: Props) => {
-    let { children, visual, size } = props;
-    let ref = useRef<HTMLButtonElement | null>(null);
-    let { buttonProps } = useButton(props, ref);
-
+const Button = ({ children, visual, size, ...rest }: Props) => {
     return (
-        <button {...buttonProps} ref={ref} className={button({ visual, size })}>
+        <RACButton {...rest} className={button({ visual, size })}>
             {children}
-        </button>
+        </RACButton>
     );
 };
 

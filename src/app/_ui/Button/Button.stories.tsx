@@ -1,5 +1,5 @@
-import { within } from "@storybook/test";
 import { expect, jest } from "@storybook/jest";
+import { within } from "@storybook/test";
 
 import { css } from "../../../../styled-system/css";
 import { button } from "../../../../styled-system/recipes";
@@ -8,6 +8,7 @@ import Button from "./Button";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const fn = jest.fn();
+
 const meta = {
     title: "Example/Button",
     component: Button,
