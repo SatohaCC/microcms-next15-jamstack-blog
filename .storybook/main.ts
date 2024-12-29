@@ -7,7 +7,14 @@ const config: StorybookConfig = {
         "@storybook/addon-essentials",
         "@chromatic-com/storybook",
         "@storybook/addon-interactions",
-        "@storybook/addon-coverage", // オブジェクト形式で設定
+        {
+            name: "@storybook/addon-coverage",
+            options: {
+                istanbul: {
+                    exclude: ["node_modules/**", "**/styled-system/**"],
+                },
+            },
+        },
     ],
     framework: {
         name: "@storybook/nextjs",

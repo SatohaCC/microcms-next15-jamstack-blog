@@ -10,25 +10,11 @@ type Props = {
 };
 
 const Pagination = ({ topPage, lastPage, pageList, currentPage, category }: Props) => {
-    if (lastPage === 1) {
-        return (
-            <Center p={5}>
-                <HStack>
-                    <PaginationButton
-                        page={topPage}
-                        currentPage={currentPage}
-                        category={category}
-                    />
-                </HStack>
-            </Center>
-        );
-    }
-
     return (
         <Center p={5}>
             <HStack>
                 <PaginationButton page={topPage} currentPage={currentPage} category={category} />
-                {currentPage > 3 && <div>・・・</div>}
+                {lastPage > 1 && currentPage > 3 && <div>・・・</div>}
                 {pageList.map((page, index) => (
                     <PaginationButton
                         key={index}
@@ -37,8 +23,14 @@ const Pagination = ({ topPage, lastPage, pageList, currentPage, category }: Prop
                         category={category}
                     />
                 ))}
-                {currentPage < lastPage - 2 && <div>・・・</div>}
-                <PaginationButton page={lastPage} currentPage={currentPage} category={category} />
+                {lastPage > 1 && currentPage < lastPage - 2 && <div>・・・</div>}
+                {lastPage > 1 && (
+                    <PaginationButton
+                        page={lastPage}
+                        currentPage={currentPage}
+                        category={category}
+                    />
+                )}
             </HStack>
         </Center>
     );

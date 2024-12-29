@@ -8,6 +8,8 @@ type Props = {
 };
 
 const PaginationContainer = ({ totalCount, category = "article", currentPage }: Props) => {
+    if (totalCount <= PER_PAGE) return null;
+
     const range = (start: number, end: number) =>
         [...Array(end - start + 1)].map((_, i) => start + i);
     const pages = range(1, Math.ceil(totalCount / PER_PAGE));

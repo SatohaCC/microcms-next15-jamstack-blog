@@ -11,7 +11,7 @@ export const PaginationButton = ({ page, currentPage, category }: Props) => (
     <Link href={`/${category}/page/${page}`}>
         <button
             className={pageButton({
-                visual: page === currentPage ? "solid" : "outline",
+                visual: page === currentPage ? "currentPage" : "otherPages",
             })}
         >
             {page}

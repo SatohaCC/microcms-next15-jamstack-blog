@@ -17,31 +17,24 @@ export const pageButton = cva({
 
     variants: {
         visual: {
-            solid: {
-                bg: "accent.default",
-                color: "accent.fg",
+            currentPage: {
+                bg: "teal.600",
+                color: "white",
                 p: "2",
                 justifyItems: "center",
-                _hover: {
-                    background: "accent.emphasized",
-                },
-                _focusVisible: {
-                    outlineOffset: "2px",
-                    outline: "2px solid",
-                    outlineColor: "border.accent",
-                },
             },
-            outline: {
-                color: "GrayText",
+            otherPages: {
+                color: "gray.500",
                 borderWidth: "1px",
-                borderColor: "border.default",
+                borderColor: "gray.500",
                 _hover: {
-                    background: "gray.a2",
+                    color: "gray.700",
+                    borderColor: "gray.700",
                 },
-                _focusVisible: {
+                _focus: {
                     outlineOffset: "2px",
                     outline: "2px solid",
-                    outlineColor: "border.outline",
+                    outlineColor: "gray.700",
                 },
             },
         },
