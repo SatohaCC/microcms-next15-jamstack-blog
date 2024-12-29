@@ -30,15 +30,13 @@ export const getList = async (queries?: MicroCMSQueries) => {
 };
 
 // ブログの詳細を取得
-export const getDetail = async (contentId: string, queries?: MicroCMSQueries) => {
-    const detailData = await client.getListDetail<ArticleType>({
-        endpoint: "articles",
-        contentId,
-        queries,
+// microCMSから特定の記事を取得
+export async function getBlogPost(id: string): Promise<ArticleType> {
+    const data: ArticleType = await client.get({
+        endpoint: `articles/${id}`,
     });
-
-    return detailData;
-};
+    return data;
+}
 
 // 親カテゴリを取得してメニューの項目として使う
 export const getMenu = async (queries?: MicroCMSQueries) => {

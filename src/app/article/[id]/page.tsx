@@ -1,35 +1,41 @@
 import dayjs from "dayjs";
+import "highlight.js/styles/a11y-dark.css";
+import parse from "html-react-parser";
+import { processer } from "microcms-richedit-processer";
 
-import { client } from "../../../../libs/microcms";
-import { ArticleType } from "../../../../libs/types";
+import BackBtn from "@/_components/BackBtn";
 
-// microCMSから特定の記事を取得
-async function getBlogPost(id: string): Promise<ArticleType> {
-    const data: ArticleType = await client.get({
-        endpoint: `articles/${id}`,
-    });
-    return data;
-}
+import { client, getBlogPost } from "../../../../libs/microcms";
+import { css } from "../../../../styled-system/css";
+import { Box } from "../../../../styled-system/jsx";
 
 // 記事詳細ページの生成
 export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params; // IDを取得
 
-    const post = await getBlogPost(id);
+    const content = await getBlogPost(id);
 
     // dayjsを使ってpublishedAtをYY.MM.DD形式に変換
-    const formattedDate = dayjs(post.publishedAt).format("YY.MM.DD");
+    const publishedAt = dayjs(content.publishedAt).format("YY.MM.DD");
+    const updatedAt = dayjs(content.updatedAt).format("YY.MM.DD");
+
+    const newContent = await processer(content.body, {
+        code: { enabled: true },
+        img: { lazy: false }, // srcのままにする設定。trueだとdata-srcに変換されてしまう。
+    });
 
     return (
-        <main>
-            <h1>{post.title}</h1> {/* タイトルを表示 */}
-            <div>{formattedDate}</div> {/* 日付を表示 */}
-            <div>
-                カテゴリー：{post.categories[0].label} {/* カテゴリーを表示 */}
-            </div>
+        <>
+            <h1>{content.title}</h1> {/* タイトルを表示 */}
+            <div>作成:{publishedAt}</div> {/* 日付を表示 */}
+            <div>更新:{updatedAt}</div> {/* 日付を表示 */}
+            <p className={css({ py: "5" })}>{content.summary}</p>
             {/* カテゴリーを表示 */}
-            <div dangerouslySetInnerHTML={{ __html: post.body }} /> {/* 記事本文を表示 */}
-        </main>
+            <div className={css({ pt: "5" })}>{parse(newContent)}</div>
+            <Box pt={10}>
+                <BackBtn />
+            </Box>
+        </>
     );
 }
 

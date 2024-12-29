@@ -49,51 +49,51 @@ export default defineConfig({
 
     globalCss: {
         html: {
-            h: "full",
-            overflowY: "scroll",
+            h: "full", // 高さ100%
+            overflowY: "scroll", // 縦スクロールを常に表示
         },
         body: {
-            marginTop: "0",
+            marginTop: "0", // body の上マージンをリセット
         },
         fonts: {
-            body: "system-ui, sans-serif",
-            mono: "Menlo, monospace",
+            body: "system-ui, sans-serif", // 本文用フォント
+            mono: "Menlo, monospace", // コード用フォント
         },
         a: {
-            color: "ruby.11",
-            _hover: { color: "textColorHover", textDecoration: "none" },
-            _active: { color: "textColorActive" },
-            _focus: { color: "textColorActive" },
-            cursor: "pointer",
+            color: "textColor", // リンクの色
+            _hover: { color: "textColorHover", textDecoration: "none" }, // ホバー時の色と下線
+            _active: { color: "textColorActive" }, // アクティブ時の色
+            _focus: { color: "textColorActive" }, // フォーカス時の色
+            cursor: "pointer", // カーソルをポインターに
         },
         h1: {
-            fontSize: { base: "2xl", md: "3xl" },
-            fontWeight: "600",
-            pb: "2",
-            mb: "5",
+            fontSize: { base: "xl", md: "2xl" }, // 見出し1のフォントサイズ（モバイルとデスクトップで変更）
+            fontWeight: "600", // 見出し1の太さ
+            pb: "2", // 見出し1の下パディング
+            mb: "5", // 見出し1の下マージン
         },
         h2: {
-            fontSize: { base: "xl", md: "2xl" },
-            fontWeight: "600",
+            fontSize: { base: "xl", md: "xl" }, // 見出し2のフォントサイズ
+            fontWeight: "500", // 見出し2の太さ
         },
         h3: {
-            fontSize: { base: "xl", md: "2xl" },
-            fontWeight: "600",
+            fontSize: { base: "xl", md: "xl" }, // 見出し3のフォントサイズ
+            fontWeight: "500", // 見出し3の太さ
         },
         p: {
-            fontSize: { base: "lg", md: "xl" },
-            lineHeight: "tall",
-            letterSpacing: "normal",
+            fontSize: { base: "lg", md: "xl" }, // 段落のフォントサイズ（モバイルとデスクトップで変更）
+            lineHeight: "tall", // 行の高さ
+            letterSpacing: "normal", // 字間
         },
         ol: {
-            listStyleType: "decimal",
-            listStylePosition: "inside",
+            listStyleType: "decimal", // 番号付きリストのスタイル
+            listStylePosition: "inside", // リストの位置
         },
         blockquote: {
-            m: "20px",
-            pl: "10px",
-            borderLeftWidth: "4px",
-            borderLeftColor: "#f86c3d",
+            m: "20px", // 引用部分のマージン
+            pl: "10px", // 引用部分の左パディング
+            borderLeftWidth: "4px", // 引用部分の左ボーダー幅
+            borderLeftColor: "#f86c3d", // 引用部分の左ボーダー色
         },
     },
     jsxFramework: "react",
