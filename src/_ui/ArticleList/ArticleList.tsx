@@ -1,7 +1,7 @@
 import Card from "@/_ui/Card/Card";
 
-import { ArticleType } from "../../../../libs/types";
-import { css } from "../../../../styled-system/css";
+import { ArticleType } from "../../../libs/types";
+import { css } from "../../../styled-system/css";
 
 type Props = {
     contents: ArticleType[];

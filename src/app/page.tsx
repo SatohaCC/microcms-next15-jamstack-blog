@@ -1,5 +1,5 @@
+import ArticleList from "@/_ui/ArticleList/ArticleList";
 import Pagination from "@/_ui/Pagination/Pagination";
-import ArticleList from "@/app/_components/ArticleList/ArticleList";
 
 import { getList } from "../../libs/microcms";
 

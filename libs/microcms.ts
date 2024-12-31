@@ -55,7 +55,11 @@ type getPathsProps = {
     totalCount: number;
 };
 
-// ページネーション用のパスを生成する
+/**
+ * Generate page paths for pagination.
+ * If contents is empty, return paths like /page/2 ... /page/{totalPages}.
+ * Otherwise, generate paths based on each category label and page number.
+ */
 export const getPaths = ({ contents = [], totalCount }: getPathsProps) => {
     const totalPages = Math.ceil(totalCount / PER_PAGE);
 
