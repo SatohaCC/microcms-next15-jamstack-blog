@@ -1,5 +1,5 @@
 import { Center, HStack } from "../../../styled-system/jsx";
-import { PaginationButton } from "./PagenationButton";
+import { PaginationButton } from "./PaginationButton";
 
 type Props = {
     topPage: number;

@@ -1,6 +1,6 @@
 import { cva } from "../../../styled-system/css";
 
-export const pageButton = cva({
+export const pagiButton = cva({
     base: {
         alignItems: "center",
         appearance: "none",

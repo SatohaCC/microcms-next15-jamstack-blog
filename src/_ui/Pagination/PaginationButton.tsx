@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { pageButton } from "./Pagenation.cva";
+import { pagiButton } from "./Pagination.cva";
 
 type Props = {
     page: number;
@@ -10,7 +10,7 @@ type Props = {
 export const PaginationButton = ({ page, currentPage, category }: Props) => (
     <Link href={`/${category}/page/${page}`}>
         <button
-            className={pageButton({
+            className={pagiButton({
                 visual: page === currentPage ? "currentPage" : "otherPages",
             })}
         >
